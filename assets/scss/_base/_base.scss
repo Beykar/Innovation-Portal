@@ -1,0 +1,451 @@
+
+#tipMainWrapper {
+	width: 100%;
+	background: $white;
+	font-family: EYInterstate-Regular,sans-serif;
+	@include fontSize(16px);
+	color: $eyOffBlack;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	position: relative;
+
+	a{
+		text-decoration: none;
+		color:inherit;
+		cursor: pointer;
+    }
+    
+    .tip__home-section{
+        min-height: 50vh;
+        flex-basis:100%;
+
+        @include mq($from:desktop){
+            min-height: 40vh;
+            flex-basis:50%;
+            margin:0;
+
+            @include mq($from: desktopWide){
+                min-height: 44vh;
+            }
+
+            //IE only
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+               flex-basis: 42%;
+               flex-grow: 1;
+           }
+        }       
+        padding: 2% 4%;
+
+        &-accordion{
+            flex-basis: 100%;
+        }
+    }
+    
+    .tip__home-intro-section{
+        order:1; 
+
+        &--intro-para, 
+
+        &--intro-para{
+            font-family: EYInterstate-Bold, sans-serif;
+            @include fontSize(18px);
+            padding-right:3%;
+            padding-bottom: 3%;
+        }
+
+        &--main-para{
+            font-family: EYInterstate-Light, sans-serif;
+            padding-right: 3%;
+            padding-bottom: 3%;
+        }
+    } 
+
+    .tip__home-featured-section{
+        position: relative;
+        order:3;
+        @include mq($from:desktop){
+            order:2;
+        }
+        background-color: $eyPrimaryGray;
+
+        &--wrapper{
+            position: relative;
+            height:100%;
+            top:0;
+            left:0;
+            background-color: transparent;
+            margin-bottom: 3%;
+
+            @include mq($from:desktop){
+                background-color: $eyPrimaryGray;
+                width:108%;
+                overflow-x: hidden;
+                height: 108%;
+                padding:8% 6%;
+                position:absolute;
+                top:0;
+                left:-6%;
+                margin-bottom: 0;
+            }
+
+            &-awards{
+                overflow: hidden;
+                padding:2% 0 6% 0;
+            }
+        }
+    
+        .tip__featured-section-carousel-item{
+
+            &--header{
+                padding-left: 2%;
+                @include fontSize(24px);
+            }
+
+             &--cont{
+                display: flex;
+                flex-direction: column;
+                @include mq($from: desktop){
+                    flex-direction: row;
+                }
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }               
+            }    
+
+            &--info-cont{
+                flex-basis: 100%;
+                order:2;
+                @include mq($from: desktop){
+                    flex-basis:63%;
+                    order:1;
+                }
+            }
+            &--info-para{
+                height: 150px;
+                padding: 3%;
+                @include fontSize(16px);
+            }
+
+            &--info-link-cont{
+                font-family: EYInterstate-Bold, sans-serif;
+                padding: 1% 2%;
+                background-color:$eyYellow;
+                border-radius: 5px;
+                width: 40%; 
+                text-align: center;
+                margin-left: 3% !important;
+
+                &:hover{
+                    background-color: $eyOffBlack;
+                }
+
+                @include mq($from:desktop){
+                    width: 50%;
+                }
+            }    
+            &--info-link{
+                    text-decoration: none;
+                    color: $eyOffBlack !important;
+                    &:hover{
+                        color:$white !important;
+                    }
+                }
+            
+            
+            &--img-cont{
+                flex-basis:100%;
+                order:1;
+                text-align: center;
+                @include mq($from:desktop){
+                    flex-basis: 35%;
+                    order:2;
+                }                
+            }
+
+            &--img{
+                width: 90%;
+                border:none;
+                outline: none;
+                @include mq($from: desktop){
+                    width: 100%;
+                }
+            }
+        }
+        
+        .carousel-indicators li {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+        }
+        .carousel-indicators {
+            bottom:-24px;
+            @include mq($from:desktop){
+                bottom: -37px;
+            }
+        }
+
+    }
+
+
+	.tip__ssl-item{
+		&--main{
+			background-color: $eyGrayLight;
+			color:$eyOffBlack;
+		}
+		&--td{
+			background-color:$eyPrimaryPurple;
+		}
+		&--r{
+			background-color:$eyPrimaryOrange;
+		}
+		&--vme{
+			background-color:$eyPrimaryGreen;
+		}
+		&--ots{
+			background-color:$eyPrimaryCyan;
+		}
+		&--eyp{
+			background-color:$eyPrimaryBlue;
+		}
+		&--cf{
+			background-color:$eyPrimaryPurpleDark; 
+		}
+	}	
+
+	.tip__tasx-intro-section{
+		font-family: EYInterstate-Light, sans-serif;
+		flex-basis:100%;
+		margin: 3% 0 2%;
+		// padding:0 4%;
+	}
+
+	.clicked{
+        background-color: $eyOffBlack;
+        color: $white !important;
+    }
+	
+	.tip__tasx-tool-card-list{
+       
+        list-style: none;
+        padding: 0;
+        display: flex; 
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        &--item{
+            position: relative;
+            background-color: transparent;
+            color: $eyOffBlack !important;
+            flex-basis: 85%;
+            height: 175px;
+            border: 1px solid $eyGrayDark;
+            border-radius: 5px;
+            padding: 15px;
+            margin: auto;
+            margin-bottom: 2%;
+            transition: .5s ease;
+
+            @include mq($from: tablet){
+                flex-basis: 48%;
+                margin-bottom: 2%;
+            }
+
+            //IE only
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                @include mq($from: tablet){
+                    flex-basis:41%;       
+                }
+            }
+
+            &-search{
+                @extend.tip__tasx-tool-card-list--item;
+
+                @include mq($from: desktopMid){
+                    flex-basis: 32.5%;
+                    margin-bottom: 1%; 
+                }
+
+                @include mq($from: desktopXL){
+                    flex-basis: 24%;
+                }
+
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    @include mq($from: desktopMid){
+                        flex-basis: 28%;
+                    }
+                }
+    
+            }
+
+            &-tool{
+                @extend.tip__tasx-tool-card-list--item;
+            }
+
+            &:hover{
+                cursor: pointer;
+                background-color: $eyOffBlack;
+                color:$eyYellow !important;
+            }
+        }
+       
+        &--link{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        &--img-cont{
+
+            //IE only
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                flex-basis: 37%;
+            }
+        }
+
+        &--img{
+            border: 1px solid $eyPrimaryGray;
+            width: 90px;
+            height: 110px;
+            margin-top: 6px;
+        }
+
+        &--desc-cont{
+            flex-basis: 100%;
+            margin-top: -5px;
+            margin-left: 4%;
+
+            &-top{
+
+                display: inline-flex;
+                width: 90%;
+
+                &--heading{
+                    font-family: EYInterstate-Bold, sans-serif;
+                    margin-left: 0;
+                }
+
+                &--icon{
+                    width:35px;
+                    height: 35px;
+                    padding-top: 9px;
+                    text-align: center;
+                    border-radius: 150%;
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    color: $white;
+
+                    @include fontSize(12px);
+                }
+            }
+
+            &-bottom{
+                
+                &--para{
+                    font-family: EYInterstate-Light, sans-serif;
+                    margin-bottom:0;
+                    @include fontSize(14px);
+                    line-height: 1.3;
+                    
+                    @include mq($from: tablet){
+                        @include fontSize(12px);
+                        margin-top: 5px;
+                    }
+    
+                    //IE only
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        @include fontSize(14px);
+                        margin-top: -2px;
+
+                        @include mq($from: tablet){
+                            margin-top: -9px;
+                        }
+
+                        @include mq($from: desktop, $until: desktopWide){
+                            @include fontSize(12px);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .tip__tasx-team-contact{
+        &-section{
+            background-color: $eyOffBlack;
+            padding: 4%;
+        }
+
+        &-list {
+            font-family: EYInterstate-Light, sans-serif;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            // flex-wrap: wrap;
+
+            &--item{
+                background-color: $eyYellow;
+                border: 1px solid $eyYellow;
+                padding: 2%;
+                border-radius: 5px;
+                width: auto;
+                margin-right: 3%;
+                margin-bottom: 4%;
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: $eyOffBlack;
+                    .tip__tasx-team-contact-list--link{
+                        color: $eyYellow !important;
+                    }
+                }
+
+            }
+
+            &--link{
+                color: $eyOffBlack ; 
+                width: 100%; 
+            }
+        }
+    }
+
+    .tip__tasx-quote-img{
+        margin-top:1%;
+        width: 25px;
+        height: 16px;
+        margin-right: 2%;
+        display: none;
+ 
+        @include mq($from: desktop){
+            display:block;
+        }
+ 
+        &--black{
+            @extend .tip__tasx-quote-img;
+            display: block;
+            @include mq($from: desktop){
+                display:none;
+            }
+
+            //IE only
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                width:auto;
+            }
+        }
+
+        &--news{
+            @extend .tip__tasx-quote-img;
+            display: block;
+
+            //IE only
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                width:auto;
+            }
+        }
+    }
+ 
+}

@@ -1,0 +1,103 @@
+.tip__search-wrapper{
+
+    // position: relative;
+    padding:0 4%;
+
+    .tip__tasx-search-menu{
+        &-section{
+            position: absolute;
+            top:-60px;
+            left:-5px;
+
+            @include mq($from: midMobile){
+                left: -26px;
+            }
+
+            @include mq($from: tablet){
+                left: -33px;
+            }
+
+            @include mq($from: desktop){
+                left: -43px;
+            }
+
+            @include mq($from: desktopMid){
+                left: -51px;
+            }
+
+
+        }
+        &--list{
+            list-style: none;
+            background-color: $eyGrayLight;
+            color: $white; 
+            width: 344px;
+            display: inline-flex;
+            padding: 6px; 
+            margin-bottom:0;
+            
+            @include mq($from: midMobile){
+                width: 440px;
+            }
+        }
+        &--list-item{
+            font-family: EYInterstate-Bold, sans-serif;            
+            cursor: pointer;
+            width: 60px;
+            text-align: center;
+            transition: .5s ease;
+            padding:0; 
+
+            &:first-child{
+                padding-top: 5px;
+                margin:0;
+                margin-left: -5px;
+            }
+
+            &:not(:first-child):not(:last-child){
+                padding-top:6px;
+                margin-top: 11px;
+                margin-bottom:-5px;
+            }   
+            &:not(:first-child):not(:last-child):hover, &-link:hover{
+                margin-top: -5px;
+            }    
+            
+            &--reset{
+                @extend .tip__tasx-search-menu--list-item;
+                background-color: $eyYellow; 
+                color: $eyOffBlack;             
+                width: 70px;
+                text-align: center;
+                margin: auto 0 auto 12px;
+                padding: 2px 0;
+
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    padding: 4px 0;
+                }
+            }
+        }            
+        &--tools-item{
+            font-family: EYInterstate-Bold, sans-serif;
+            @include fontSize(20px);
+            cursor: pointer;
+            &-link{
+                color:$eyOffBlack;
+            }
+        }
+        .active-tool{
+            margin-top: -8px;
+        }
+    }
+
+    .tip__tasx-search-card-section{
+        margin-top: 100px;
+        padding-top: 3rem;
+        position: relative;
+    }
+
+    .ssl-clicked{
+        margin-top: -5px !important; 
+    }
+}

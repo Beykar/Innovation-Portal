@@ -1,0 +1,33 @@
+<div class="tip__tasx-news-wrapper" ng-controller="ourNewsCtrl">
+    <div class="tip__tasx-news-featured-section">
+        <div class="tip__tasx-news-featured-desc">
+            <h5 class="tip__tasx-news-featured-desc--heading">{{featuredArticle.Title}}</h5>
+            <p class="tip__tasx-news-featured-desc--para" ng-bind-html="$sce.trustAsHtml(featuredArticle.Content)">
+            </p>
+            <div class="tip__tasx-news-featured-desc--quote-cont">
+                <img class="tip__tasx-quote-img--news" src="siteUrlSiteAssets/uki-tas-innovation-site/assets/img/text-quotes.png?csf=1&e=RIEduG" alt="Quote-marks" ng-if="featuredArticle.Quote != null">
+                <p class="tip__tasx-news-featured-desc--quote-para" ng-if="featuredArticle.Quote != null">{{featuredArticle.Quote}}</p>
+            </div> 
+            <p class="tip__tasx-news-featured-desc--quote-author" ng-if="featuredArticle.QuoteAuthor != null">
+                {{featuredArticle.QuoteAuthor}}
+            </p>                          
+        </div>
+        <div class="tip__tasx-news-featured-img-cont">
+            <img src="{{featuredArticle.Image}}" alt="" class="tip__tasx-news-featured-img">
+        </div>
+    </div>
+    <div class="tip__tasx-news-articles-section">
+        <ul class="tip__tasx-news-articles-list" >
+            <li class="tip__tasx-news-articles-list--item" ng-repeat="newsItem in newsDataArr | filter: !{ID: featuredArticle.ID} | orderBy : '-Date'" ng-click="makeFeature(newsItem)" xxview-more>
+                <a href="" class="tip__tasx-news-articles-list--link">
+                    <h6 class="tip__tasx-news-articles-list--info">{{newsItem.Author}} | {{newsItem.Date | date}}</h6>
+                    <h5 class="tip__tasx-news-articles-list--heading">{{newsItem.Title}}</h5>
+                    <p class="tip__tasx-news-articles-list--para">{{newsItem.Summary}}</p>
+                </a>
+            </li>
+        </ul>
+        <!-- <a href="" class="tip__tasx-news-articles-viewmore-btn">
+            <div class="tip__tasx-news-articles-viewmore-cont">View More</div>
+        </a> -->
+    </div>
+</div>

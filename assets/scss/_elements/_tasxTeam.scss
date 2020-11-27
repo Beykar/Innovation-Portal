@@ -1,0 +1,261 @@
+.tip__tasx-team-wrapper{
+
+    .tip__tasx-intro-section{
+        padding: 0 6% 0 4%;
+    }
+     
+    .tip__tasx-team-members{
+     
+        &-section{
+            background-color: $eyOffWhite;
+            padding:4%;
+        }
+
+        &-list{
+            list-style: none;
+            padding: 0;
+            display: flex; 
+            flex-wrap: wrap;
+            align-items: flex-start;
+
+            &--item{
+                background-color: $eyPrimaryGray;
+                color: $eyOffBlack !important;
+                flex-basis: 85%;
+                border-radius: 5px;
+                padding: 3%;
+                margin: auto;
+                margin-bottom: 3%;
+                display: flex;
+                flex-wrap: wrap-reverse;
+                transition: .5s ease;
+                min-height: 225px;
+
+                @include mq($from: tablet){
+                    flex-wrap: nowrap;
+                    flex-basis: 45%;
+                    padding: 2% 1.5% 2% 1%;
+                    margin-bottom: 1%;
+                }
+                
+
+                @include mq($from: desktopMid){
+                    flex-basis:32%;       
+                } 
+                
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    @include mq($from: desktop){
+                        flex-basis:29%;       
+                    } 
+                }
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: $eyOffBlack;
+                    color:$white !important;
+                }
+            }
+        }
+
+        &-desc{
+
+            &-cont{
+                flex-basis: 100%;
+                display: block;
+                padding-top: 2rem;
+
+                @include mq($from: tablet){
+                    padding-top: 0;
+                    flex-basis: 60%;
+                    padding-left: 3%;
+                    padding-right: 3%;
+                }
+            }
+
+            &--heading{
+                font-family: EYInterstate-Bold, sans-serif;
+                font-weight: 600;
+            }
+
+            &--intro-para, &--hidden-para{
+                font-family: EYInterstate-Light, sans-serif;
+                margin-bottom:0;
+                @include fontSize(12px);
+                line-height: 1.3;  
+            }
+
+            &--hidden-para{
+                margin-top: 2.5rem;
+                display: none;
+
+                @include mq($from: tablet){
+                    width: 170%;
+                }
+
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    margin-top: 2.5rem;
+                }
+            }
+
+            &--readmore-btn{
+                font-family: EYInterstate-Bold, sans-serif;
+                font-weight: 600;
+                color: $eyOffBlack;
+
+                @include fontSize(12px);
+            }
+        }
+
+        &-img-cont{
+            flex-basis: 100%;
+
+            @include mq($from: tablet){ 
+                flex-basis: 40%;
+                padding-top: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        &-img{
+            width: 90%;
+            // width: 130px;
+            // height: 115px;
+        }
+    }
+    
+
+    .tip__tasx-team-contributors{
+        
+        &-section{
+            background-color: $eyPrimaryGray;
+            padding:4%;
+        }
+
+        &-intro-cont{
+            margin-bottom: 3%;
+            font-family: EYInterstate-Light, sans-serif;
+            @include fontSize(14px);
+
+            &--heading{
+                font-family: EYInterstate-Bold, sans-serif;
+                @include fontSize(24px);
+                margin-bottom: 3%;
+            }
+
+            &--ssl-heading{
+                @include fontSize(14px);
+                margin-bottom:2%;
+            }
+
+            &--para{
+                font-family: EYInterstate-Light, sans-serif;
+                @include fontSize(14px);
+                margin-bottom: 3%;
+            }
+
+
+            &--filter label{
+                font-family: EYInterstate-Light, sans-serif;
+                @include fontSize(14px);
+            }
+
+            &--filter select{
+                font-family: EYInterstate-Light, sans-serif;
+                @include fontSize(14px);
+                margin-top:-.5rem;
+                margin-left: 1rem;
+                padding: .5% 1%;
+                width: 15%;
+                
+                &:active{
+                    border: 1px solid $eyPrimaryGray;
+                }
+            }
+        }
+
+        &-list{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            &--item{
+                background-color: transparent;
+                flex-basis: 85%;
+                border-radius: 5px;
+                padding: 3%;
+                margin: auto;
+                margin-bottom: 3%;
+                display: flex;
+                flex-wrap: wrap;
+
+                @include mq($from: tablet){
+                    flex-wrap: nowrap;
+                    flex-basis: 45%;
+                    padding: 1% 1.5% 1% 1%;
+                    margin-bottom: 1%;
+
+                    //IE only
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        flex-basis:42%;
+                    }
+                }
+
+                
+
+                @include mq($from: desktop){                   
+                    flex-basis: 32%;
+                    //IE only
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        @include mq($from: desktop){
+                            flex-basis:21%;       
+                        } 
+                    }
+                }
+                
+
+                @include mq($from: desktopMid){
+                    flex-basis:24%;       
+                } 
+
+                
+            }
+
+        }
+
+        &-desc-cont{
+            flex-basis:60%;
+        }
+
+        &-desc-list{
+            font-family: EYInterstate-Light, sans-serif;
+            list-style: none;
+            padding-left: 2rem;
+            height: 50%;
+            margin-top: 17%;
+            @include fontSize(14px);
+
+            &--item{
+                &:first-child{
+                    margin-bottom: 1rem;
+                }
+                &:nth-child(2){
+                    font-family: EYInterstate-Bold, sans-serif;
+                    font-weight: 600;
+                } 
+            }
+        }
+
+        &-img-cont{
+            flex-basis: 40%;
+        }
+
+        &-img{
+            width:100%;
+        }
+    
+    }    
+
+}

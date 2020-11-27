@@ -1,0 +1,41 @@
+<div class="tip__top-section-wrapper" ng-controller="topSectionCtrl">
+    <div class="tip__top-section-cont">
+    <div class="tip_breadcrumb-cont">
+        <a ng-if="currentPage.StateName != 'sat-tools/ind-tool/sub-tool' && currentPage.StateName != 'sat-all-tools'" class="tip_breadcrumb-cont--link" ui-sref="{{currentPage.StateName}}">{{currentPage.StateName}}</a>
+        <a ng-if="currentPage.StateName == 'tas-all-tools'" class="tip_breadcrumb-cont--link" ui-sref="sat-all-tools">SaT-Tools</a>
+        <a ng-if="currentPage.StateName == 'sat-tools/ind-tool/sub-tool'" class="tip_breadcrumb-cont--link" ui-sref="sat-tools">SaT-Tools</a>
+
+        
+    </div>
+    <div class="tip_top-section-search-cont" ng-hide="hideSearch == true">
+        <a class="tip_top-section-search-cont--link" ui-sref="search">
+            <img  class="tip_top-section-search-cont--img" src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/search-magnifier-outline-svgrepo-com.png?csf=1&e=M0ich2" alt="search icon">
+        </a>    
+    </div>
+    </div>
+    <div class="tip__tools-sliding-menu--mobile-cont" ng-if="currentPage.ToolsMenu == true">
+        <ul class="tip__tools-sliding-menu--mobile-list">
+            <a class="tip__tools-sliding-menu--mobile-list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/TD"><li class="tip__tools-sliding-menu--mobile-list-item tip__ssl-item--td active-tool">Transaction Diligence</li></a>
+            <a class="tip__tools-sliding-menu--mobile-list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/R"><li class="tip__tools-sliding-menu--mobile-list-item tip__ssl-item--r">Restructuring</li></a>
+            <a class="tip__tools-sliding-menu--mobile-list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/VME"><li class="tip__tools-sliding-menu--mobile-list-item tip__ssl-item--vme">Valuation, Modelling and Economics</li></a>
+            <a class="tip__tools-sliding-menu--mobile-list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/OTS"><li class="tip__tools-sliding-menu--mobile-list-item tip__ssl-item--ots">OTS</li></a>
+            <a class="tip__tools-sliding-menu--mobile-list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/EYP"><li class="tip__tools-sliding-menu--mobile-list-item tip__ssl-item--eyp">EY Parthenon</li></a>
+            <a class="tip__tools-sliding-menu--mobile-list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/CF"><li class="tip__tools-sliding-menu--mobile-list-item tip__ssl-item--cf">Corporate Finance</li></a>
+        </ul>
+    </div>
+    <div class="tip__tools-sliding-menu--cont" ng-if="currentPage.ToolsMenu == true" slide-menu>
+        <ul class="tip__tools-sliding-menu--list">
+            <li class="tip__tools-sliding-menu--list-item tip__ssl-item--main tip__tools-sliding-menu--tools-item"><a class="tip__tools-sliding-menu--tools-item-link" type="button">Tools</a></li>
+            <li class="tip__tools-sliding-menu--list-item tip__ssl-item--td"><a class="tip__tools-sliding-menu--list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/TD">TD</a></li>
+            <li class="tip__tools-sliding-menu--list-item tip__ssl-item--r"><a class="tip__tools-sliding-menu--list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/R">R</a></li>
+            <li class="tip__tools-sliding-menu--list-item tip__ssl-item--vme"><a class="tip__tools-sliding-menu--list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/VME">VME</a></li>
+            <li class="tip__tools-sliding-menu--list-item tip__ssl-item--ots"><a class="tip__tools-sliding-menu--list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/OTS">OTS</a></li>
+            <li class="tip__tools-sliding-menu--list-item tip__ssl-item--eyp"><a class="tip__tools-sliding-menu--list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/EYP">EYP</a></li>
+            <li class="tip__tools-sliding-menu--list-item tip__ssl-item--cf"><a class="tip__tools-sliding-menu--list-item-link" href="siteUrlSitePages/Index.aspx/tas-tools/CF">CF</a></li>
+        </ul>
+    </div>
+    <div class="tip__top-section-heading-cont">
+        <h1 class="tip__top-section-heading-cont--header">{{currentPage.Title}}</h1>
+    </div>
+</div>
+

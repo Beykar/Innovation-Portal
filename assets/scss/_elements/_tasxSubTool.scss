@@ -1,0 +1,301 @@
+.tip__tasx-subtool-wrapper{
+
+    .tip__top-section-heading-cont{
+        padding:0 4%;
+        position:relative;
+
+        &--header{
+            font-family: EYInterstate-Light,sans-serif;
+            @include fontSize(24px);
+            color:$eyGrayDark;
+
+            @include mq($from:tablet){
+                @include fontSize(28px); 
+            }
+        }
+    }
+
+    .tip__top-section-ssl-cont{
+        position: absolute;
+        top: 31px;
+        left: 0;
+        padding: 9px 7px;
+        @include fontSize(16px);
+        color: $white;    
+    }
+
+    .tip__tasx-intro-section{
+
+        padding: 0 4%;
+        
+        &--para{
+            @include fontSize(18px);
+
+            @include mq($from: desktop){
+                width: 66%;
+            }            
+        }    
+
+    }
+
+    .tip__tasx-subtool-main{
+
+        &-section{
+            padding:4% 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            @include mq($from: desktop){
+                padding:0 0 0 3%;
+                flex-wrap: nowrap;
+            }
+        }
+
+        &--list-cont{
+            flex-basis: 100%;
+            padding-top: 2%;
+            padding-left: 1%;
+            font-family: EYInterstate-Light, sans-serif;
+            @include mq($from: desktop){
+                flex-basis: 48%;
+            }
+        }
+
+        &--list{
+           padding-left: 20px;
+           
+           &-item{
+
+               @include fontSize(14px);
+               margin-bottom: 1%;
+            }
+        }
+
+        &--access{
+
+            &-cont{
+            flex-basis: 100%;
+            padding-top: 2%;
+
+                @include mq($from: desktop){
+                    flex-basis: 25%;
+                }
+            }
+
+            &-img-cont{
+                    width: 125px;
+                    height: 125px;
+                    margin: 4% auto;                                      
+                    background-color: $eyOffBlack;
+                    border-radius: 150px;
+                    border: 1px solid $eyYellow;
+                    color: $eyYellow;
+                    font-family: EYInterstate-Bold, sans-serif;
+                    @include fontSize(20px);
+                    text-align: center;
+                    padding: 26px 0;
+
+                    @include mq($from: desktop){
+                        margin-top:8%;
+                        margin-left: 10%;
+                    }
+
+                    &:hover{
+                        background-color: $eyYellow;
+                        color: $eyOffBlack;
+                    }
+                }
+        } 
+ 
+        &--champion{
+
+            &-cont{
+                background-color: $eyPrimaryGray;
+                flex-basis: 100%;
+                display: flex;
+                align-items: center;
+                padding: 4% 0;
+
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    padding: 3% 0;
+                }
+
+                @include mq($from: desktop){
+                    flex-basis: 47%; 
+                    height:100%;
+                }
+            }    
+            &-list{
+                list-style: none;
+                flex-basis: 58%;
+                padding-left: 20px;
+                margin-bottom:0;
+                display: flex;
+                flex-direction: column; 
+
+                @include mq($from: tablet, $until: desktop){
+                    flex-basis: 38%;
+                }
+
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    display: block;
+                }
+
+                &--item{
+                    flex-basis: 100%;
+                    display: flex;
+
+                    &:first-child{
+                        margin-bottom: 1rem;
+                    }
+                }
+                
+            }
+
+            &-img-cont{
+                flex-basis: 40%;
+            }
+
+            &-img{
+                width: 100%;
+            }
+
+            &-desc-cont{
+                flex-basis: 60%;
+            }
+
+            &-desc-list{
+               
+                font-family: EYInterstate-Light, sans-serif;
+                list-style: none;
+                padding-left: 1rem;
+                height: 50%;
+                margin-top: 9%;
+               
+                &--item{
+                    @include fontSize(16px);
+
+                    @include mq($from: tablet){
+                        @include fontSize(12px);
+                    }
+
+                    &:first-child{
+                        margin-bottom: .3rem;
+                        @include fontSize(20px);
+
+                        @include mq($from: desktopMid){
+                            @include fontSize(16px);
+                        }
+                    }
+                    
+                    &:nth-child(2){
+                        font-family: EYInterstate-Bold, sans-serif;
+                        font-weight: 600;
+                    } 
+                }                
+            } 
+
+        }
+
+    }
+
+    .tip__tasx-team-contact{
+
+        &-list{
+            
+            display: flex;
+            flex-wrap: wrap;
+
+            @include mq($from: tablet){
+                width: 50%;
+            }
+       
+
+            &--item{
+                flex-basis: auto;
+                margin-right: 1% !important;
+                margin-bottom: 1% !important;
+                padding-top: 1.5% !important;
+                height: 3rem;
+
+                &-video{
+                    @extend .tip__tasx-team-contact-list--item; 
+                    &:hover{
+                        .tip__tasx-team-contact-list-img-video{
+                            background-image: url('siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Hover-Video.png?csf=1&e=8ayZnu');
+                        }
+                    }
+                }
+
+                &-use-case{
+                    @extend .tip__tasx-team-contact-list--item; 
+                    &:hover{
+                        .tip__tasx-team-contact-list-img-use-case{
+                            background-image: url('siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Hover-UseCase.png?csf=1&e=8ayZnu');
+                        }
+                    }
+                }
+
+                &-quick-ref{
+                    @extend .tip__tasx-team-contact-list--item; 
+                    &:hover{
+                        .tip__tasx-team-contact-list-img-quick-ref{
+                            background-image: url('siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Hover-QuickReference.png?csf=1&e=8ayZnu');
+                        }
+                    }
+                }
+
+                &-faq{
+                    @extend .tip__tasx-team-contact-list--item; 
+                    &:hover{
+                        .tip__tasx-team-contact-list-img-faq{
+                            background-image: url('siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Hover-FAQ.png?csf=1&e=8ayZnu');
+                        }
+                    }
+                }
+            }
+
+            &--link{
+                display: flex;
+                align-items: center;
+            }
+
+            &-img{
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 30px;
+                width: 30px;
+                margin: auto .5rem auto 0;
+                
+                &-video{
+                    @extend .tip__tasx-team-contact-list-img;
+                    background-image: url('siteUrlSiteAssets/uki-tas-innovation-test/assets/img/video.png?csf=1&e=8ayZnu');
+                }
+
+                &-use-case{
+                    @extend .tip__tasx-team-contact-list-img;
+                    background-image: url('https://eygb.sharepoint.com/:i:/r/sites/CSG-London-test/uki-tas-innovation/SiteAssets/uki-tas-innovation-test/assets/img/study.png?csf=1&e=8ayZnu');
+                }
+
+                &-quick-ref{
+                    @extend .tip__tasx-team-contact-list-img;
+                    background-image: url('https://eygb.sharepoint.com/:i:/r/sites/CSG-London-test/uki-tas-innovation/SiteAssets/uki-tas-innovation-test/assets/img/quick-ref.png?csf=1&e=8ayZnu');
+                }
+
+                &-faq{
+                    @extend .tip__tasx-team-contact-list-img;
+                    background-image: url('https://eygb.sharepoint.com/:i:/r/sites/CSG-London-test/uki-tas-innovation/SiteAssets/uki-tas-innovation-test/assets/img/FAQ.png?csf=1&e=8ayZnu');
+                }
+            }
+
+            &--para{
+                @include fontSize(18px);
+                margin:0;
+            } 
+        }
+    }
+}
+  

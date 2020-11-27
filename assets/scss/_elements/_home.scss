@@ -1,0 +1,382 @@
+.tip__home-wrapper{
+
+    display: flex;
+    flex-wrap: wrap;
+    @include mq($from: desktop){
+        flex-direction: row;
+    }    
+
+    .tip__home-section{
+        min-height: 50vh;
+        flex-basis:100%;
+
+        @include mq($from:desktop){
+            min-height: 28vh;
+            flex-basis:50%;
+            margin:0;
+            //IE only
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+               flex-basis: 42%;
+               flex-grow: 1;
+           }
+        }       
+        padding: 2% 4%;
+    }
+
+    .tip__home-intro-section{
+        order:1; 
+
+        &--intro-para, 
+
+        &--intro-para{
+            font-family: EYInterstate-Bold, sans-serif;
+            @include fontSize(18px);
+            padding-right:3%;
+            padding-bottom: 3%;
+        }
+
+        &--main-para{
+            font-family: EYInterstate-Light, sans-serif;
+            padding-right: 3%;
+            padding-bottom: 3%;
+        }
+    } 
+
+    .tip__home-featured-section{
+        position: relative;
+        order:3;
+        @include mq($from:desktop){
+            order:2;
+        }
+        background-color: $eyPrimaryGray;
+
+        &--wrapper{
+            position: relative;
+            height:100%;
+            top:0;
+            left:0;
+            background-color: transparent;
+            margin-bottom: 3%;
+
+            @include mq($from:desktop){
+                background-color: $eyPrimaryGray;
+                width:108%;
+                overflow-x: hidden;
+                height: 111%;
+                padding:6%;
+                position:absolute;
+                top:0;
+                left:-6%;
+                margin-bottom: 0;
+            }           
+        }
+    
+        .tip__featured-section-carousel-item{
+
+            &--header{
+                padding-left: 2%;
+                @include fontSize(24px);
+            }
+
+             &--cont{
+                display: flex;
+                flex-direction: column;
+                @include mq($from: desktop){
+                    flex-direction: row;
+                }
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }               
+            }    
+
+            &--info-cont{
+                flex-basis: 100%;
+                order:2;
+                @include mq($from: desktop){
+                    flex-basis:63%;
+                    order:1;
+                }
+            }
+            &--info-para{
+                padding: 3%;
+                @include fontSize(16px);
+                height: 150px; 
+            }
+
+            &--info-link-cont{
+                font-family: EYInterstate-Bold, sans-serif;
+                padding: 1% 2%;
+                background-color:$eyYellow;
+                border-radius: 5px;
+                width: 40%; 
+                text-align: center;
+                margin-left: 3% !important;
+
+                &:hover{
+                    background-color: $eyOffBlack;
+                }
+
+                @include mq($from:desktop){
+                    width: 50%;
+                }
+            }    
+            &--info-link{
+                    text-decoration: none;
+                    color: $eyOffBlack !important;
+                    &:hover{
+                        color:$white !important;
+                    }
+                }
+            
+            
+            &--img-cont{
+                flex-basis:100%;
+                order:1;
+                text-align: center;
+                @include mq($from:desktop){
+                    flex-basis: 35%;
+                    order:2;
+                }                
+            }
+
+            &--img{
+                width: 90%;
+                border:none;
+                outline: none;
+                @include mq($from: desktop){
+                    width: 100%;
+                }
+            }
+        }
+        
+        .carousel-indicators li {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+        }
+        .carousel-indicators {
+            bottom:-24px;
+            @include mq($from:desktop){
+                bottom: -37px;
+            }
+        }
+
+
+
+    }
+
+    .tip__home-tools-section{
+        order:2; 
+        @include mq($from:desktop){
+            order:3;
+        }
+
+        font-family: EYInterstate-Light,sans-serif;
+        color:$eyGrayDark;
+        background-color:$eyGrayPale;
+
+        &--heading{           
+            @include fontSize(24px);           
+            margin-bottom: 0;
+        }
+
+        &--sub-heading{
+            margin-bottom: 1rem;
+        }
+
+        .tip__home-tools-ssl{
+            &--list{
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                padding:0;
+                @include mq($from:desktop){
+                    flex-direction: row;
+                    height: 70%;
+                    margin-top: 1rem;
+                }
+           
+                &-item{
+                    color: $white;
+                    cursor: pointer;
+                    height:100px;
+                    transition: all 0.5s;
+                    position: relative;
+                    @include mq($from: desktop){
+                        flex:1;
+                        height: 95%;
+                        color:$white; 
+                        @include fontSize(11px);
+                        text-align: center;
+                        display: flex;
+                    
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                            -webkit-transition: all 0.3s;
+                            -moz-transition: all 0.3s;
+                            -o-transition: all 0.3s;
+                            transition: all 0.3s;
+                        }
+                        &:hover::before{
+                            opacity: 0;
+                            -webkit-transform: scale(1.2,1.2);
+                            transform: scale(1.2,1.2);
+                        }
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                            opacity: 0;
+                            background-color: rgba(255,255,255,0.25);
+                            -webkit-transition: all 0.3s;
+                            -moz-transition: all 0.3s;
+                            -o-transition: all 0.3s;
+                            transition: all 0.3s;
+                            -webkit-transform: scale(0.5,0.5);
+                            transform: scale(0.5,0.5);
+                        }
+                        &:hover::after{
+                            opacity: 1 ;
+                            -webkit-transform: scale(1,1);
+                            transform: scale(1,1);
+                        }
+                    }
+                }
+                &-item-link{
+                    z-index: 3;
+                    cursor: pointer;
+                    width: 100%;
+                }
+                &-item-header{
+                    font-family: EYInterstate-Bold,sans-serif;
+                    color: $white; 
+                    text-align: center;
+                    margin-top: 21px;
+                    
+                    @include mq($from:desktop){
+                        margin-top: 72px;
+                    }
+
+                    @include mq($from:desktopWide){
+                        margin-top: 112px;
+                    }
+                }
+                &-item-desc{
+                    font-family: EYInterstate-Light, sans-serif;
+                    line-height:.8rem;
+                    text-align: center;
+                    padding:3%;
+                   
+                    @include mq($from: desktop){
+                        margin-top: 6%;
+                    }
+
+                    @include mq($from: desktopWide){
+                        @include fontSize(16px);
+                        line-height: 1.3rem;
+                    }
+                }
+            }  
+        }
+        
+    }
+    
+
+    .tip__home-links-section{
+        order:4;
+        width: 100%;
+        background-color: $eyOffBlack;
+        display: block;
+
+       &-list{
+            display: block;
+            padding-left: 0;
+
+            @include mq($from: tablet){
+                display: inline-flex;
+                width: 100%;
+                height: 95%;
+                padding-top: 9%;
+                padding-left: 0;
+            }
+
+            @include mq($from: desktopWide){
+                padding-top:4%;
+            }
+
+            &--item{
+            position: relative;
+            width: 60%; 
+            margin: 5% auto;
+
+            @include mq($from: tablet){
+                flex-basis: 27%;
+                height: 79%;
+            }
+
+            @include mq($from:desktop){
+                flex-basis: 31%;
+                height: 85%;
+                &:first-child{
+                    margin-left:1%;
+                }
+                margin-left:2%;
+
+                &:hover{
+                    .tip__home-links-section-list--item-overlay{
+                        background-color: rgba(46, 46, 56, .8);
+                        height:70%;
+                        top:32%;
+                    }
+                    
+                    .tip__home-links-section-list--item-link{
+                        color:$white !important;
+                    }                
+                }
+            }
+
+                &-img{
+                    width:100%;
+                }
+            
+                &-overlay{
+                    font-family: EYInterstate-Bold,sans-serif;
+                    background:$eyYellow;
+                    position: absolute;
+                    width: 100%;
+                    height: 30%;
+                    top: 71%;
+                    text-align: center; 
+                    padding: 5% 1%;
+                    transition: .5s ease;
+                }
+
+                &-link{
+                    font-family: EYInterstate-Bold, sans-serif;
+                    @include fontSize(20px);
+                    color:$eyOffBlack !important;
+
+                    @include mq($from: tablet){
+                        @include fontSize(14px);
+                    }
+                }
+
+                
+
+            }
+       } 
+    }
+
+} 

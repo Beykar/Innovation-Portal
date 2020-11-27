@@ -1,0 +1,120 @@
+.tip__tasx-indtool-wrapper{
+
+    .tip__top-section-heading-cont{
+        padding-left: 4%;
+    }
+ 
+    .tip__tasx-intro-section{
+        padding: 0 6% 0 4%;
+    }
+
+    .tip__tasx-indtool-main{
+
+        &-section{
+            background-color: $eyOffWhite;
+            display: flex;
+            flex-wrap: wrap;
+            padding:3%;
+
+            @include mq($from: desktop){
+                flex-wrap: nowrap;
+            }
+        }
+
+        &-card-cont{
+            flex-basis: 100%;
+            order:1;
+            @include mq($from: desktop){
+                flex-basis: 64%;
+                margin-right: 2%;
+            }
+            
+            //CSS for card list in base.scss
+        }
+
+        &-lead{
+        
+            &-cont{ 
+                flex-basis: 100%;
+                order:2;
+                background-color: $eyOffBlack;
+                color: $white;
+                border-radius: 20px;
+                height: 390px;
+                // padding-top: 1%;
+                @include mq($from: desktop){
+                    flex-basis: 34%;
+                }
+            }
+
+            &-list{
+                list-style: none;
+                display: block;
+                margin-bottom: 0;
+
+                &--item{
+                    display: flex;
+
+                    &:first-child{
+                        margin: 2rem 0;
+                    }
+                }
+            }
+
+            &-img-cont{
+                flex-basis: 34%;
+
+                &--heading{
+                    width: 10rem;
+                    @include fontSize(16px);
+                }
+
+                &--img{
+                    width:110px;
+                    height: 110px;
+                }
+            }
+
+            &-desc-cont{
+                flex-basis: 62%;
+                height: 50%;
+                margin: auto;
+
+                &--list{
+                    list-style: none;
+                    padding-left: 0;
+                    margin-left:-35px;
+                    margin-top: 30px;
+                    @include fontSize(14px);
+
+                    //IE only
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        margin-left: auto;
+
+                        @include mq($from: midMobile){
+                            margin-left: -35px;
+                        }
+
+                        @include mq($from: tablet){
+                            margin-left: -100px;       
+                        }
+
+                        @include mq($from: desktop){
+                            margin-left: 20px;
+                            @include fontSize(12px);
+                        }
+
+                        @include mq($from: desktopMid){
+                            @include fontSize(14px);
+                        }
+
+                        @include mq($from: desktopWide){
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 
+

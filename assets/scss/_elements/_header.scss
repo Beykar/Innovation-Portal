@@ -1,0 +1,110 @@
+#tipMainWrapper{
+
+    
+    .tip__logo-cont{
+
+        width: 80%;
+        height:60px;
+        margin-bottom: 7px;
+
+        @include mq($from: desktop) {
+            width: 44%;
+            margin-bottom: auto;
+        }
+
+        &--link{
+            @extend %clearfix; 
+        }       
+        
+        &--img{
+            float: left;
+            margin-left: 2%;
+            margin-top: 5px;
+            width: 57px;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('siteUrlSiteAssets/uki-tas-innovation-test/assets/img/ey__mobile-logo.png');
+            
+
+            @include mq($from: midMobile){
+                width: 120px;
+                margin-right: 50px;
+                background-image: url('siteUrlSiteAssets/uki-tas-innovation-test/assets/img/ey__main-logo.png');
+            }
+
+            @include mq($from:tablet){
+                margin-left:3%;
+            }
+
+            @include mq($from: desktop){
+                margin-left: 7%;
+            }
+        }
+
+        &--para{
+            @include fontSize(18px); 
+            margin-top: 33px;
+            
+            @include mq($from: midMobile){
+                margin-top: 40px;
+                margin-right: 0;
+            }
+
+            @include mq($from:tablet){
+                margin-top: 33px;
+                float: left;                
+                margin-left: 5%;
+                @include fontSize(22px);
+            }
+
+            //IE only
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                margin-top: 30px;
+            }
+
+        }
+    }
+
+    .tip__nav-cont{
+        background-color: $eyBlack;
+        color: $white;
+        border-bottom:3px solid $white;
+    }
+
+    .tip__nav-list-cont{
+        @include mq($from: tablet){
+            margin-bottom: -11px;
+        }
+    
+        .tip__nav-list{
+            margin-top: 25px;
+            color: $white;
+            @include fontSize(14px);
+
+            &--item{
+                font-family: EYInterstate-Bold, sans-serif;
+                @include fontSize(13px);
+            }
+
+            &--link{
+                width: max-content;
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    width: auto;
+                    white-space: nowrap;
+                }
+                &.active{
+                    color: $eyYellow;
+                    border-bottom:3px solid $eyYellow;
+                }
+
+            }
+            &--item.active a{
+                color: $eyYellow;  
+            }
+        }
+
+    }    
+
+}

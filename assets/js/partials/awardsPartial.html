@@ -1,0 +1,93 @@
+<div class="tip__tasx-awards-wrapper" ng-controller="awardsCtrl">
+    <div class="tip__home-section tip__home-intro-section" ng-controller="topSectionCtrl">
+        <div class="tip__home-intro-section--intro-para tip__lead-para">
+            <img class="tip__tasx-quote-img" src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/text-quotes.png?csf=1&e=RIEduG" alt="Quote-marks">
+            <img class="tip__tasx-quote-img--black" src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/text-quotes-black.png?csf=1&e=RIEduG" alt="Quote-marks-black">
+            <span>You don't have to be a techie to get an Innovation Award</span> 
+        </div>
+        <p class="tip__home-intro-section--main-para">
+            We're looking for those of you who are supporting the SaT Ambition through adopting innovation. There are two categories and each award could be up to £3k per person (subject to tax).
+        </p>
+        <div class="tip__tasx-awards-categories-cont">
+            <h5 class="tip__tasx-awards-categories-header">Categories</h5>
+            <ul class="tip__tasx-team-contact-list">
+                <li class="tip__tasx-team-contact-list--item" ng-repeat="awardCat in awardCatArr"><a href="" class="tip__tasx-team-contact-list--link" data-toggle="modal" data-target="#modal{{$index+1}}">{{awardCat.Title}}</a></li>
+                <!-- <li class="tip__tasx-team-contact-list--item"><a href="" class="tip__tasx-team-contact-list--link">Innovation Development</a></li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="tip__home-section tip__home-featured-section">
+        <div class="tip__home-featured-section--wrapper-awards">
+            <div id="tip__home-section-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#tip__home-section-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#tip__home-section-carousel" data-slide-to="1"></li>
+                    <li data-target="#tip__home-section-carousel" data-slide-to="2"></li>
+                </ol>
+            
+                <div class="carousel-inner">
+                    <div class="carousel-item" ng-class="{active:!$index}" ng-repeat="awardsItem in featuredArr | limitTo : 3">
+                        <div class="tip__featured-section-carousel-item">
+                            <h3 class="tip__featured-section-carousel-item--header">{{awardsItem.Title}}</h3>
+                            <div class="tip__featured-section-carousel-item--cont">
+                                <div class="tip__featured-section-carousel-item--info-cont">
+                                    <p class="tip__featured-section-carousel-item--info-para">
+                                        {{awardsItem.Summary}}
+                                    </p>
+                                    <a class="tip__featured-section-carousel-item--info-link"  xxng-click="getItemID(awardsItem.ID)" ui-sref="our-news({'newsID': awardsItem.ID})">
+                                        <p class="tip__featured-section-carousel-item--info-link-cont">
+                                            See more detail
+                                        </p>
+                                    </a>                                          
+                                </div>
+                                <div class="tip__featured-section-carousel-item--img-cont">
+                                    <img class="tip__featured-section-carousel-item--img" src="{{awardsItem.Image}}" alt="carousel-item">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="tip__home-section-accordion tip__tasx-awards-accordion-section">
+        <div class="tip__tasx-awards-accordion accordion" id="tasAwardsAccordion">
+            <div class="card tip__tasx-awards-accordion--card" ng-repeat="accordionItem in awardAccordionArr">
+                <a class="btn btn-link tip__tasx-awards-accordion--link" type="button" data-toggle="collapse" data-target="#collapse{{$index+1}}"
+                aria-expanded="true" aria-controls="collapse{{$index+1}}"> 
+                    <div class="card-header tip__tasx-awards-accordion--card-header" id="heading{{$index+1}}">
+                        <p class="tip__tasx-awards-accordion--heading">
+                            {{accordionItem.Title}}
+                        </p>
+                    </div>
+                </a>
+                <div id="collapse{{$index+1}}" class="collapse" aria-labelledby="heading{{$index+1}}"
+                data-parent="#tasAwardsAccordion">
+                    <div class="card-body tip__tasx-awards-accordion-card-body" ng-bind-html="$sce.trustAsHtml(accordionItem.Description)">
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+    <div class="tip__tasx-team-contact-section">
+        <ul class="tip__tasx-team-contact-list">
+            <li class="tip__tasx-team-contact-list--item"><a href="mailto:tasx@uk.ey.com" class="tip__tasx-team-contact-list--link">Request</a></li>
+            <li class="tip__tasx-team-contact-list--item"><a href="mailto:tasx@uk.ey.com?subject=Suggestion" class="tip__tasx-team-contact-list--link">Suggest</a></li>
+            <li class="tip__tasx-team-contact-list--item"><a href="mailto:tasx@uk.ey.com" class="tip__tasx-team-contact-list--link">Contact</a></li>
+        </ul>
+    </div>
+    <!-- Modal -->
+    <div class="modal tip__tasx-modal fade" ng-repeat="awardCat in awardCatArr" id="modal{{$index+1}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog tip__tasx-modal-dialog" role="document">
+      <div class="modal-content tip__tasx-modal-content">
+        <div class="modal-header tip__tasx-modal-header">
+            <a type="button" class="close tip__tasx-modal-close-btn" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </a>
+          </div>
+        <div class="modal-body tip__tasx-modal-body" ng-bind-html="$sce.trustAsHtml(awardCat.Description)">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

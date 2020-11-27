@@ -1,0 +1,112 @@
+<head>
+<base href="siteUrl">
+
+<!-- Custom Meta tag -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="siteUrlSiteAssets/uki-tas-innovation-test/assets/css/style.css" type="text/css"> 
+
+
+</head>
+<body>
+    
+<div id="tipMainWrapper" ng-app="tasInnApp">
+	<header>
+        <nav class="tip__navbar navbar navbar-expand-lg tip__nav-cont">
+            <div class="tip__logo-cont">
+                <a ui-sref="home" title="" class="tip__logo-cont--link" active>
+                    <div class="tip__logo-cont--img">
+                    </div>
+                    <p class="tip__logo-cont--para">SaTLabs</p>
+                </a>
+		    </div>
+            <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div id="tip__menu-burger" animate-menu>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>    
+            </a>
+
+            <div class="collapse navbar-collapse tip__nav-list-cont" id="navbarNav">
+              <ul class="navbar-nav ml-auto tip__nav-list" active>
+                <li class="nav-item tip__nav-list--item">
+                    <a id="home-link" class="tip__nav-list--link nav-link active" ui-sref="home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item tip__nav-list--item">
+                    <a class="tip__nav-list--link nav-link" ui-sref="sat-strategy">Innovation Strategy</a>
+                </li>
+                <li class="nav-item tip__nav-list--item">
+                    <a class="tip__nav-list--link nav-link" ui-sref="sat-all-tools">Your Tools</a>
+                </li>
+                <li class="nav-item tip__nav-list--item">
+                    <a class="tip__nav-list--link nav-link" ui-sref="sat-team">Our Team</a>
+                </li>
+                <li class="nav-item tip__nav-list--item">
+                    <a class="tip__nav-list--link nav-link" ui-sref="gds">GDS</a>
+                </li>
+                <li class="nav-item tip__nav-list--item">
+                    <a class="tip__nav-list--link nav-link" ui-sref="innovation-awards">Innovation Awards</a>
+                </li>
+                <li class="nav-item tip__nav-list--item">
+                    <a class="tip__nav-list--link nav-link" ui-sref="our-news({'newsID': 'home'})">Our News</a>
+                </li>
+                <li class="nav-item tip__nav-list--item">
+                    <a class="tip__nav-list--link nav-link" href="https://sites.ey.com/sites/TASAmbition/SitePages/index.aspx" target="_blank">SaT Ambition</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    
+	<main class="tip__main-cont">
+        <div top-section>
+        </div>
+		<ui-view></ui-view>
+	</main>
+</body>
+
+
+    <!-- Vendors -->
+	<script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/vendors/angular.min.js"></script>	
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/vendors/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/vendors/jquery.min.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/vendors/popper.min.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/vendors/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/7afb12a081.js?001"></script>
+
+    <!-- App -->
+	<script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/app.js"></script>
+
+	<!-- Factories -->
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/factory/introSectionFactory.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/factory/ourNewsFactory.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/factory/searchFactory.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/factory/paramsFactory.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/factory/awardsFactory.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/factory/teamFactory.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/factory/quicklinksFactory.js"></script>
+
+    
+    <!-- Controllers -->
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/homeCtrl.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/awardsCtrl.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/topSectionCtrl.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/ourNewsCtrl.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/searchCtrl.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/tasxIndToolCtrl.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/tasxSubToolCtrl.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/tasxTeamCtrl.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/gdsCtrl.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/controllers/strategyCtrl.js"></script>
+    
+    <!-- Directives -->
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/directives/menuAnimationDir.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/directives/activeDir.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/directives/topSectionDir.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/directives/slidingToolsMenuDir.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/directives/readMoreDir.js"></script>
+    <script src="siteUrlSiteAssets/uki-tas-innovation-test/assets/js/directives/viewMoreDir.js"></script>
+	
+</div>

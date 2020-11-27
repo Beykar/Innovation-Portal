@@ -1,0 +1,222 @@
+.tip__tasx-gds-wrapper{
+    background-color: $eyOffWhite;
+    padding:0 0 0 4%;
+
+    .tip__tasx-intro-section{
+        &--para{
+            width: auto;
+
+            @include mq($from: desktop){
+                width: 50%;
+            }
+        }
+    }
+
+    .tip__tasx-gds-main-section{
+        display: flex;
+        flex-wrap: wrap;
+
+        @include mq($from: desktop){
+            flex-wrap: nowrap;
+        }
+    }
+
+    .tip__tasx-gds-main-desc{
+        &-cont{
+            flex-basis: 100%;
+            font-family: EYInterstate-Light, sans-serif;
+            @include mq($from: desktop){
+                flex-basis: 50%;
+                // padding-right: 5%;
+            }
+        }
+
+        &--para, &--list{
+            font-family: EYInterstate-Light, sans-serif;
+            padding-right: 4%;
+            //@include fontSize(14px);
+        }
+    }
+
+    .tip__tasx-gds-contacts{
+
+        &--heading{
+            text-align: center;
+            margin: 5% auto;
+
+            @include mq($from: tablet){
+                @include fontSize(16px);
+                font-weight: 600;
+                margin:3% 0 5% 0;
+                text-align: left;
+            }
+        }    
+        
+        &-section{
+            background-color: $eyPrimaryGray;
+            padding:4%;
+        }
+
+        &-intro-cont{
+            margin-bottom: 3%;
+            font-family: EYInterstate-Light, sans-serif;
+            @include fontSize(14px);
+
+            &--heading{
+                font-family: EYInterstate-Bold, sans-serif;
+                @include fontSize(24px);
+                margin-bottom: 3%;
+            }
+
+            &--ssl-heading{
+                @include fontSize(14px);
+                margin-bottom:2%;
+            }
+
+            &--para{
+                font-family: EYInterstate-Light, sans-serif;
+                @include fontSize(14px);
+                margin-bottom: 3%;
+            }
+
+
+            &--filter label{
+                font-family: EYInterstate-Light, sans-serif;
+                @include fontSize(14px);
+            }
+
+            &--filter select{
+                font-family: EYInterstate-Light, sans-serif;
+                @include fontSize(14px);
+                margin-top:-.5rem;
+                margin-left: 1rem;
+                padding: .5% 1%;
+                width: 15%;
+                
+                &:active{
+                    border: 1px solid $eyPrimaryGray;
+                }
+            }
+        }
+
+        &-list{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            &--item{
+                background-color: transparent;
+                flex-basis: 75%;
+                border-radius: 5px;
+                padding: 3%;
+                margin: auto;
+                margin-bottom: 3%;
+                display: flex;
+                flex-direction: column;
+    
+                @include mq($from: tablet){
+                    flex-basis: 50%;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    margin:0;
+                    margin-bottom: 2%;
+                    padding:0;
+                    padding-right:2%;
+                }
+
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    flex-basis:75%;
+                    @include mq($from: tablet){
+                        flex-wrap: nowrap;
+                        flex-basis: 48%;
+                    }
+                }
+            }
+
+        }
+
+        &-desc-cont{
+            @include mq($from: tablet){
+                flex-basis: 60%;
+            }       
+        }
+
+        &-desc-list{
+            font-family: EYInterstate-Light, sans-serif;
+            list-style: none;
+            padding-left: 1rem;
+            height: 50%;
+            margin-top: 9%;
+            @include fontSize(14px);
+
+            @include mq($from: desktop, $until: desktopMid){
+                @include fontSize(12px);
+            }
+
+            &--item{
+                &:first-child{
+                    @include fontSize(16px);
+                    margin-bottom: .5rem;
+
+                    @include mq($from: desktop, $until: desktopMid){
+                        @include fontSize(14px);
+                    }
+                }
+                &:nth-child(2){
+                    font-family: EYInterstate-Bold, sans-serif;
+                    font-weight: 600;
+                } 
+            }
+        }
+
+        &-img-cont{
+            @include mq($from: tablet){
+                flex-basis: 40%;
+            }          
+        }
+
+        &-img{
+            width:100%;
+        }
+    
+    }   
+    .tip__tasx-gds-main-awards{
+        &-cont{
+            flex-basis: 100%;
+            display: inline-flex;
+            flex-wrap: wrap;
+
+            @include mq($from: desktop){
+                flex-basis: 50%;
+            }
+        }
+
+        &-img-cont{
+            flex-basis: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-img{
+            width: 100%;
+            margin-bottom: 2%;
+            order: 2;
+            @include mq($from: desktop){
+                order:1;
+            }
+        }
+
+        &-desc{
+            flex-basis: 100%;
+            @include fontSize(12px);
+            order: 1;
+            
+            @include mq($from: desktop){
+                order: 2;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,70 @@
+//Setting up variables
+$spin: rotate(135deg);
+$reverse-spin: rotate(-135deg);
+$default-spin: rotate(0deg);
+$duration: .25s;
+$type: ease-in-out;
+
+//Basic wrapper align
+.burger-align {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#tip__menu-burger {
+  margin-top: 15px;
+  margin-right: -20px;  
+  width: 48px;
+  height: 35px;
+  transform: $default-spin;
+  transition: $duration * 2 $type;
+  cursor: pointer;
+}
+
+
+#tip__menu-burger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 85%;
+  background:$eyYellow;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: $default-spin;
+  transition: $duration $type;
+}
+
+
+#tip__menu-burger span:nth-child(1) {
+  top: 12px;
+}
+
+#tip__menu-burger span:nth-child(2) {
+  top: 22px;
+}
+
+#tip__menu-burger span:nth-child(3) {
+  top: 32px;
+}
+
+
+#tip__menu-burger.open span:nth-child(1) {
+  top: 18px;
+  transform: $spin;
+}
+
+
+#tip__menu-burger.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#tip__menu-burger.open span:nth-child(3) {
+  top: 18px;
+  transform: $reverse-spin;
+}

@@ -1,0 +1,76 @@
+<div class="tip__tasx-team-wrapper">
+    <div class="tip__tasx-intro-section" ng-controller="topSectionCtrl">
+        <p class="tip__tasx-intro-section--para" ng-bind-html="$sce.trustAsHtml(currentPage.Text)"></p>
+    </div>
+    <div class="tip__tasx-team-members-section" ng-controller="teamCtrl">
+        <ul class="tip__tasx-team-members-list" >
+            <li id="list-item-{{$index+1}}" class="tip__tasx-team-members-list--item" ng-repeat="teamMember in teamMembersArr | orderBy : 'Order'">
+                <a href="" class="tip__tasx-team-members-list--link">
+                    <div class="tip__tasx-team-members-desc-cont" >
+                        <p class="tip__tasx-team-members-desc--heading">{{teamMember.Title}}</p>
+                        <p class="tip__tasx-team-members-desc--intro-para">
+                            {{teamMember.Intro}}
+                        </p>
+                        <p id="para{{$index+1}}" class="tip__tasx-team-members-desc--hidden-para">
+                            {{teamMember.ReadMore}}
+                        </p>
+                        <a href="#para{{$index+1}}" type="btn" class="tip__tasx-team-members-desc--readmore-btn" xxdata-toggle="collapse" read-more>Read more</a>
+                    </div>
+                    <div class="tip__tasx-team-members-img-cont">
+                        <img src="{{teamMember.ImageLink}}" alt="" class="tip__tasx-team-members-img">
+                        <img ng-if="teamMember.ImageLink == null" src="siteUrl_layouts/15/userphoto.aspx?UserName={{teamMember.TeamMemberEmail}}" alt="" class="tip__tasx-team-members-img">
+                    </div>
+                </a>                
+            </li>
+        </ul>
+    </div>
+    <div class="tip__tasx-team-contributors-section" ng-controller="teamCtrl">
+        <div class="tip__tasx-team-contributors-intro-cont">
+            <h3 class="tip__tasx-team-contributors-intro-cont--heading" ng-bind-html="$sce.trustAsHtml(bottomSectionIntroData[8].Title)">
+            </h3>
+            <!-- <h5 class="tip__tasx-team-contributors-intro-cont--ssl-heading">
+                Sub-Service Line
+            </h5> -->
+            <p class="tip__tasx-team-contributors-intro-cont--para" ng-bind-html="$sce.trustAsHtml(bottomSectionIntroData[8].Intro_x002d_text)">
+                <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor -->
+            </p>
+            <div class="tip__tasx-team-contributors-intro-cont--filter">
+                <label for="tip__tasx-team-contributors-area-dropdown">Filter</label>
+                <select id="tip__tasx-team-contributors-area-dropdown" ng-model="selectedSSL" ng-change="filterBySSL()">
+                    <option disabled>Select SSL</option>
+                    <option>ALL</option>
+                    <option value="{{ssl.SSL}}" ng-repeat="ssl in sslArr">{{ssl.SSL}}</option>
+                    <!-- <option value="Asia Pacific">Asia Pacific</option>
+                    <option value="EMEIA">EMEIA</option>
+                    <option value="Japan">Japan</option> -->
+                </select>
+            </div>  
+                
+        </div>
+        <div class="tip__tasx-team-contributors-cont">
+            <ul class="tip__tasx-team-contributors-list">
+                <li class="tip__tasx-team-contributors-list--item" ng-repeat="contributor in contributorsArr | orderBy : 'Order'">
+                    <div class="tip__tasx-team-contributors-img-cont">
+                        <img src="{{contributor.ImageLink}}" alt="" class="tip__tasx-team-contributors-img">
+                        <img ng-if="contributor.ImageLink == null" src="siteUrl_layouts/15/userphoto.aspx?UserName={{contributor.ContributorEmail}}" alt="" class="tip__tasx-team-contributors-img">
+                    </div>
+                    <div class="tip__tasx-team-contributors-desc-cont">
+                        <ul class="tip__tasx-team-contributors-desc-list">
+                            <li class="tip__tasx-team-contributors-desc-list--item">{{contributor.SSL}}</li>
+                            <li class="tip__tasx-team-contributors-desc-list--item">{{contributor.Name}}</li>
+                            <li class="tip__tasx-team-contributors-desc-list--item">{{contributor.Position}}</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="tip__tasx-team-contact-section">
+        <ul class="tip__tasx-team-contact-list">
+            <li class="tip__tasx-team-contact-list--item"><a href="mailto:tasx@uk.ey.com" class="tip__tasx-team-contact-list--link">Request</a></li>
+            <li class="tip__tasx-team-contact-list--item"><a href="mailto:tasx@uk.ey.com?subject=Suggestion" class="tip__tasx-team-contact-list--link">Suggest</a></li>
+            <li class="tip__tasx-team-contact-list--item"><a href="mailto:tasx@uk.ey.com" class="tip__tasx-team-contact-list--link">Contact</a></li>
+        </ul>
+    </div>
+    
+</div>

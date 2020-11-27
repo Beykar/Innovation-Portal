@@ -1,0 +1,322 @@
+.tip__tasx-strategy-wrapper{
+
+
+    .tip__tasx-intro-section{
+        padding: 0 6% 0 4%;
+    }
+
+    display: flex;
+    flex-wrap: wrap; 
+
+    .tip__tasx-strategy{
+    
+        &-bottom-section{
+            min-height: 44vh;
+            flex-basis: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            position:relative;
+        }
+
+        &-pillars-cont{
+            flex-basis: 100%;
+            background-color: $eyPrimaryGray;
+            display: block;
+            padding: 4% 3%;
+
+            @include mq($from:desktop){
+                flex-basis: 60%;
+                padding-right: 8%;
+
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    flex-basis: 44%;
+                }
+            } 
+            &--heading{
+                font-family: EYInterstate-Bold, sans-serif;
+                display:block;
+                @include fontSize(24px);
+                text-align: center;
+
+                @include mq($from: desktop){
+                    text-align: unset;
+                }
+            }
+            &--para{
+                font-family: EYInterstate-Light, sans-serif;
+                @include fontSize(14px);
+            }
+        }
+
+        &-pillars-list{
+            list-style: none;
+            padding:0%;
+            display: block;
+            @include mq($from:tablet){
+                display: inline-flex;
+            }
+            &--item{
+                position: relative;
+                width: 85%;
+                margin: 5% auto;
+                height: 13rem;
+
+                @include mq($from:tablet){
+                    width: 31%;            
+                    &:first-child{
+                        margin-left:1%;
+                    }
+                    margin-left:2%;
+                }
+
+                &-link{
+                    color:$eyOffBlack !important;
+                    @include mq($from: desktop){
+                        &:hover{
+                            color:$white !important;
+                        }
+                    }                        
+                }
+                
+                &-img{
+                    width:100%;
+                    height:100%;
+                }
+                &-overlay{
+                    font-family: EYInterstate-Bold,sans-serif;
+                    background:$eyYellowPale;
+                    position: absolute;
+                    width: 100%;
+                    top:19%; 
+                    height: 82%;                   
+                    overflow:hidden;
+                    text-align: center; 
+                    padding: 5% 1%;
+                    transition: .5s ease;
+    
+                    // @include mq($from: tablet){
+                    //     top:52%;
+                    //     height:48%;
+                    // }
+    
+                    @include mq($from: desktop){
+                        height: 22%;
+                        top: 80%;
+                    } 
+                    
+                    @include mq($from: desktopMid){
+                        height:20%;
+                        top:80%;
+                    }
+
+                    @include mq($from: desktopWide){
+                        height: 21%;
+                    }
+    
+                    //IE only
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        @include mq($from: desktopMid){
+                            height: 30%;
+                        }
+
+                        @include mq($from: desktopWide){
+                            height: 21%;
+                        }
+                    }
+            
+                    &-title-para{
+                        font-family: EYInterstate-Bold, sans-serif;
+                        font-weight: bold;
+                        @include fontSize(20px);
+                        margin-bottom: 5px;
+    
+                        @include mq($from: tablet){
+                            @include fontSize(13px);
+                            margin-bottom: 15px;
+                        }
+
+                        //IE only
+                        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                            margin-bottom: 5px;
+                            @include mq($from:tablet){
+                                margin-bottom: 15px;
+                            }
+                            @include mq($from: desktopWide){
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                    &-desc-para{
+                        font-family: EYInterstate-Light, sans-serif;
+                        line-height: 1.2rem;
+                        @include fontSize(16px);
+    
+                        @include mq($from:tablet){
+                            @include fontSize(12px); 
+                            line-height: 1rem;
+                        }
+                    }
+                }   
+                
+                @include mq($from: desktop){
+                    &:hover{
+                        .tip__tasx-strategy-pillars-list--item-overlay{
+                            background-color: rgba(46, 46, 56, .8);
+                            color: $white !important;
+                            height:100%;
+                            top:0; 
+                        }
+                        .tip__tasx-strategy-pillars-list--item-link, .tip__tasx-strategy-pillars-list--item-overlay-title-para, .tip__tasx-strategy-pillars-list--item-overlay-desc-para{
+                                color:$white !important;
+                        }      
+                    }                      
+                }
+            }
+            
+        }
+        
+        &-find-more{
+            color: $eyOffBlack !important;
+            font-weight: bold;
+            @include mq($from: desktop){
+                color: $eyYellow !important;
+            }
+        }
+        &-play-cont{
+            flex-basis: 100%;
+            position:relative;
+            background-color:$eyOffBlack;
+            display: inline-flex;
+
+            @include mq($from: desktop){
+                position: absolute;
+                top:25%;
+                left: 55%; 
+                width: 150px;
+                height: 150px;
+                border-radius: 122px;
+                padding:.5%;
+
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                top:28%;
+                left:50%;
+                width:140px;
+                height:140px;
+                }
+
+                &:hover{
+                    .tip__tasx-strategy-play-cont--img{
+                        display:none;
+                    }      
+                    .tip__tasx-strategy-play-cont--hover-img{
+                        display:inline;
+                    }               
+                }
+
+            }     
+
+            &--link{
+                display: inline-flex;
+                width: 78%;
+                margin: 3% auto;
+
+                @include mq($from:desktop){
+                    width: auto;
+                    margin:auto;
+                }
+            }
+
+            &--img{
+                width: 100px;
+                height: 100px;
+                margin-top: 20%;
+
+                @include mq($from: desktop){
+                    width:99%;
+                    height:auto;
+                    margin-top: 0;
+                    transition: .5s ease;
+                }
+            }
+
+            &--hover-img{
+                width: fit-content;
+                padding: 8% 2%;
+                width:60%;
+
+                @include mq($from: desktop){
+                    width:99%;
+                    display: none;
+                    position: absolute;
+                    top: 12%;
+                    left: 0;
+                    z-index: 99;
+                    transition: .5s ease;
+                }
+            }       
+        }
+
+        &-quicklinks-cont{
+            flex-basis: 100%;
+            background-color: $white;
+            color: $eyOffBlack;
+            display: block;
+            padding: 4% 3%;
+
+            @include mq($from: desktop){
+                background-color: $eyOffBlack;
+                color: $white;
+                flex-basis: 40%;
+                padding-left: 8%;
+                //IE only
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    flex-basis: 34%;
+                }
+            }
+
+            &--heading{
+                display:block;
+                font-family: EYInterstate-Bold, sans-serif;
+                @include fontSize(24px);
+                text-align: center;
+
+                @include mq($from: desktop){
+                    text-align: unset;
+                    margin-left: 12%;
+                }
+
+            }
+            &--list{
+                font-family: EYInterstate-Regular, sans-serif;
+                list-style:none;
+                margin-top:3%;
+                line-height: 2rem;
+
+                @include mq($from: desktop){
+                    color:$white;
+                    margin-top: 15%;
+                }
+                
+                &-link{
+                    color:$eyOffBlack !important;
+                    margin-left: 1%;
+
+                    @include mq($from: desktop){
+                        color:$white !important; 
+                    }
+                }
+            } 
+            &--sub-list{
+                list-style: none;
+                &-item::before{
+                    content:'-';
+                    text-indent: -5px;
+                } 
+            }
+        }
+
+        
+    }
+}

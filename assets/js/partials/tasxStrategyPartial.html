@@ -1,0 +1,80 @@
+
+<div class="tip__tasx-strategy-wrapper">
+    <div class="tip__tasx-intro-section" ng-controller="topSectionCtrl">
+            <p class="tip__tasx-intro-section--para" ng-bind-html="$sce.trustAsHtml(currentPage.Text)"></p>
+    </div>
+    <div class="tip__tasx-strategy-bottom-section" ng-controller="strategyCtrl">
+        <div class="tip__tasx-strategy-pillars-cont">
+            <h3 class="tip__tasx-strategy-pillars-cont--heading">
+                Our Innovation Strategy is based on three key pillars
+            </h3>
+            <ul class="tip__tasx-strategy-pillars-list">
+                <a class="tip__tasx-strategy-pillars-list--item-link" href="">
+                <li class="tip__tasx-strategy-pillars-list--item">                    
+                        <img class="tip__tasx-strategy-pillars-list--item-img" src="siteUrlSiteAssets/Innov-Strategy-Images/Data-and-Analytics.png?csf=1&web=1&e=CMZN21" alt="Innovation Strategy Image">
+                        <div class="tip__tasx-strategy-pillars-list--item-overlay">                      
+                            <p class="tip__tasx-strategy-pillars-list--item-overlay-title-para">Data and Analytics</p>
+                            <p class="tip__tasx-strategy-pillars-list--item-overlay-desc-para">Helping our clients by building and embedding advanced analytics solutions that will deliver a competitive advantage.
+                            <br/><br/>
+                                <a xxng-click="getItemID(3)" ui-sref="our-news({'newsID': '3'})" class="tip__tasx-strategy-find-more">Find out more</a>
+                                </p>                    
+                        </div>
+                    </a>
+                </li>
+                <li class="tip__tasx-strategy-pillars-list--item">
+                    <a class="tip__tasx-strategy-pillars-list--item-link" href="">
+                        <img class="tip__tasx-strategy-pillars-list--item-img" src="siteUrlSiteAssets/Innov-Strategy-Images/Technology-Transformation.png?csf=1&web=1&e=qZ6hJd" alt="Meet the Team Image">
+                        <div class="tip__tasx-strategy-pillars-list--item-overlay">
+                                <p class="tip__tasx-strategy-pillars-list--item-overlay-title-para">Technology Transformation</p>
+                                <p class="tip__tasx-strategy-pillars-list--item-overlay-desc-para">Helping our clients with their capital agenda by creating and embedding technology into our core offerings and processes to drive efficiency and new sources of revenue.<br/><br/>
+                                <a ng-click="getItemID(2)" ui-sref="our-news({'newsID': '2'})" class="tip__tasx-strategy-find-more">Find out more</a>
+                                </p>                
+                        </div>
+                    </a> 
+                </li>
+                <li class="tip__tasx-strategy-pillars-list--item">
+                    <a class="tip__tasx-strategy-pillars-list--item-link" href="">
+                        <img class="tip__tasx-strategy-pillars-list--item-img" src="siteUrlSiteAssets/Innov-Strategy-Images/Disruptive-Innovation.png?csf=1&web=1&e=mLpipe" alt="Innovation Awards Image">
+                        <div class="tip__tasx-strategy-pillars-list--item-overlay">
+                                <p class="tip__tasx-strategy-pillars-list--item-overlay-title-para">Disruptive Innovation</p>
+                                <p class="tip__tasx-strategy-pillars-list--item-overlay-desc-para">Transforming our services by delivering business value from innovation.<br/><br/>
+                                <a href="siteUrlSiteAssets/Forms/AllItems.aspx?id=%2Fsites%2Finnovation%2Dhub2%2FSiteAssets%2FStrategy%20Files%2FInnovation%20Governance%2Epdf&parent=%2Fsites%2Finnovation%2Dhub2%2FSiteAssets%2FStrategy%20Files" target="_blank" class="tip__tasx-strategy-find-more">Find out more</a>
+                                </p>                   
+                        </div>
+                    </a> 
+                </li>
+            </ul>            
+            <h3 class="tip__tasx-strategy-pillars-cont--heading">
+                Transforming business through Data and Technology
+            </h3>
+            <p class="tip__tasx-strategy-pillars-cont--para">
+                There is pressure today for businesses to transform themselves – and the rewards they can reap for doing so are still greater than the uncertainty that they’re feeling. To continue to be successful, we have to make sure that we are building the right capabilities at scale to help clients through these uncertain times and help our clients realise their transformations.
+                <ul>
+                    <li>We're building a growing suite of technology, including AI, automation and analytics tools that respond to our clients' needs</li>
+                    <li>We're developing digital tools to simplify and automate repetitive tasks to free up time for more insightful client work</li>
+                    <li>We're also leading the introduction of global tools into UK&I Strategy and Transactions</li>
+                </ul>
+    
+            </p>
+        </div>
+        <div class="tip__tasx-strategy-play-cont">
+            <a href="https://eygb.sharepoint.com/:v:/r/sites/innovation-hub2/Shared%20Documents/Blinking%20Eye%20Innovation%20film.mp4?csf=1&web=1&e=6NXaUv" target="_blank" class="tip__tasx-strategy-play-cont--link">
+                <img src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/play-hover.png?csf=1&e=DRodyN" alt="Play Icon" class="tip__tasx-strategy-play-cont--hover-img">
+                <img src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Play.png?csf=1&e=DRodyN" alt="Play Icon" class="tip__tasx-strategy-play-cont--img">
+            </a>
+        </div>
+        <div class="tip__tasx-strategy-quicklinks-cont">
+            <h3 class="tip__tasx-strategy-quicklinks-cont--heading">Quick Links</h3>
+            <ul class="tip__tasx-strategy-quicklinks-cont--list">
+
+                <li class="tip__tasx-strategy-quicklinks-cont--list-item" ng-repeat="quicklinks in quickLinksData"><a href="{{ quicklinks.Link.Description }}" class="tip__tasx-strategy-quicklinks-cont--list-link" target="_blank">{{quicklinks.Title}}</a></li>            
+                <!-- <li class="tip__tasx-strategy-quicklinks-cont--list-item"><a href="siteUrlShared%20Documents/NextWave%20strategy%20brochure.pdf?csf=1&web=1&e=V8hwU1" class="tip__tasx-strategy-quicklinks-cont--list-link" target="_blank">NextWave strategy booklet</a></li>
+                <li class="tip__tasx-strategy-quicklinks-cont--list-item"><a href="https://sites.ey.com/sites/TASAmbition/SitePages/Service_delivery.aspx" class="tip__tasx-strategy-quicklinks-cont--list-link" target="_blank">TASAmbition</a></li>
+                <li class="tip__tasx-strategy-quicklinks-cont--list-item"><a href="https://sites.ey.com/sites/ukitasinnovation/Shared%20Documents/Our%20Innovation%20Strategy%20page/UK%26I%20TAS%20-%20Guide%20to%20planning%20technology%20adoption.pdf" class="tip__tasx-strategy-quicklinks-cont--list-link" target="_blank">Guide to planning technology adoption</a></li>
+                <li class="tip__tasx-strategy-quicklinks-cont--list-item"><a href="https://tasx.ey.com/" class="tip__tasx-strategy-quicklinks-cont--list-link" target="_blank">TASx Product page</a>      
+                </li>
+                <li class="tip__tasx-strategy-quicklinks-cont--list-item"><a href="https://web.microsoftstream.com/channel/9eaf009a-be6c-433b-9928-4d077b8ae798" class="tip__tasx-strategy-quicklinks-cont--list-link" target="_blank">Strategy and Transactions Innovation Station</a></li>  -->
+            </ul>
+        </div>
+    </div>
+</div>

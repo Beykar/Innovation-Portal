@@ -1,0 +1,78 @@
+<div class="tip__home-wrapper" ng-controller = "homeCtrl">
+    <div class="tip__home-section tip__home-intro-section" ng-bind-html="introData.Intro_x002d_text">
+    </div>
+    <div class="tip__home-section tip__home-featured-section">
+        <div class="tip__home-featured-section--wrapper">
+            <div id="tip__home-section-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#tip__home-section-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#tip__home-section-carousel" data-slide-to="1"></li>
+                    <li data-target="#tip__home-section-carousel" data-slide-to="2"></li>
+                </ol>            
+                <div class="carousel-inner">
+                    <div class="carousel-item" ng-class="{active:!$index}" ng-repeat="newsItem in featuredArr | limitTo : 3">
+                        <div class="tip__featured-section-carousel-item">
+                            <h3 class="tip__featured-section-carousel-item--header">{{newsItem.Title}}</h3>
+                            <div class="tip__featured-section-carousel-item--cont">
+                                <div class="tip__featured-section-carousel-item--info-cont">
+                                    <p class="tip__featured-section-carousel-item--info-para">
+                                        {{newsItem.Summary}}
+                                    </p>
+                                    <a class="tip__featured-section-carousel-item--info-link"  xxng-click="getItemID(newsItem.ID)" ui-sref="our-news({'newsID' : newsItem.ID})">
+                                        <p class="tip__featured-section-carousel-item--info-link-cont">
+                                            See more detail
+                                        </p>
+                                    </a>                                          
+                                </div>
+                                <div class="tip__featured-section-carousel-item--img-cont">
+                                    <img class="tip__featured-section-carousel-item--img" src="{{newsItem.Image}}" alt="carousel-item">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="tip__home-section tip__home-tools-section">
+        <h3 class="tip__home-tools-section--heading">Your Tools</h3>
+        <p class="tip__home-tools-section--sub-heading">by Sub-Service Line</p>
+        <ul class="tip__home-tools-ssl--list">
+            <li class="tip__home-tools-ssl--list-item tip__ssl-item--{{sslItem.cssClass}}" ng-repeat="sslItem in sslArr |  orderBy : 'Order'">
+                <a href="siteUrlSitePages/Index.aspx/tas-tools/{{sslItem.SSL}}" class="tip__home-tools-ssl--list-item-link">
+                    <h5 class="tip__home-tools-ssl--list-item-header">{{sslItem.SSL}}</h5>
+                    <p class="tip__home-tools-ssl--list-item-desc">{{sslItem.Title}}</p>
+                </a>                
+            </li>
+        </ul>
+    </div>
+    <div class="tip__home-section tip__home-links-section">
+        <ul class="tip__home-links-section-list">
+            <li class="tip__home-links-section-list--item">
+                <a class="tip__home-links-section-list--item-link" ui-sref="tasx-strategy">
+                    <img class="tip__home-links-section-list--item-img" src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/awards.jpg" alt="Innovation Strategy Image">
+                    <div class="tip__home-links-section-list--item-overlay">
+                        SaT UK&I<br/>Innovation Strategy
+                    </div>                   
+                </a> 
+            </li>
+            <li class="tip__home-links-section-list--item">
+                <a class="tip__home-links-section-list--item-link" ui-sref="tasx-team">
+                    <img class="tip__home-links-section-list--item-img" src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Strategy.jpg" alt="Meet the Team Image">
+                    <div class="tip__home-links-section-list--item-overlay">                   
+                            Meet the<br/> SaT Team              
+                    </div>
+                </a>  
+            </li>
+            <li class="tip__home-links-section-list--item">
+                <a class="tip__home-links-section-list--item-link" ui-sref="innovation-awards">
+                    <img class="tip__home-links-section-list--item-img" src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Team1.jpg" alt="Innovation Awards Image">
+                    <div class="tip__home-links-section-list--item-overlay">                    
+                        SaT  UK&I<br/>Innovation Awards               
+                    </div>
+                </a> 
+            </li>
+        </ul>
+        
+    </div>
+</div>

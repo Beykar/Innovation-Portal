@@ -1,0 +1,38 @@
+<div class="tip__search-wrapper">
+    <div class="tip__tasx-intro-section" ng-controller="topSectionCtrl">
+        <p class="tip__tasx-intro-section--para" ng-bind-html="$sce.trustAsHtml(currentPage.Text)"></p>
+    </div>
+    <div class="tip__tasx-search-card-section">
+    <div ng-controller="searchCtrl">
+        <div class="tip__tasx-search-menu-section">
+            <!-- <div class="tip__tasx-search-menu--cont"> -->
+                <ul class="tip__tasx-search-menu--list">
+                    <li class="tip__tasx-search-menu--list-item tip__ssl-item--main"><a class="tip__tasx-search-menu--tools-item-link" type="button">Tools</a></li>
+                    <li class="tip__tasx-search-menu--list-item tip__ssl-item--{{sslItem.cssClass}} ngclass: {{sslItem.Clicked}}" ng-repeat="sslItem in sslArr |  orderBy : 'Order0'" ng-click="filterBySSL(sslItem.SSL)"><a class="tip__tasx-search-menu--list-item-link" href="#">{{sslItem.SSL}}</a></li>
+                    <li class="tip__tasx-search-menu--list-item--reset" ng-click="resetFilters()"><a class="tip__tasx-search-menu--list-item-link" href="">Reset</a></li> 
+                </ul>
+            <!-- </div> -->
+        </div>
+        <ul class="tip__tasx-tool-card-list">
+            <li class="tip__tasx-tool-card-list--item  tip__tasx-tool-card-list--item-search" ng-repeat="searchItem in searchResultsArr | orderBy : 'Order'" >
+                <a ng-href="siteUrlSitePages/Index-Test.aspx/sat-tools/{{searchItem.SSL}}/{{searchItem.Title}}" class="tip__tasx-tool-card-list--link">
+                    <div class="tip__tasx-tool-card-list--img-cont">
+                        <img ng-hide="searchItem.Image == null" src="{{searchItem.Image.Url}}" alt="" class="tip__tasx-tool-card-list--img">
+                        <img ng-if="searchItem.Image == null" src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/blank-155x146.png" alt="" class="tip__tasx-tool-card-list--img">
+                    </div>
+                    <div class="tip__tasx-tool-card-list--desc-cont">
+                        <div class="tip__tasx-tool-card-list--desc-cont-top">
+                            <p class="tip__tasx-tool-card-list--desc-cont-top--heading">{{searchItem.Title}}</p>
+                            <div class="tip__tasx-tool-card-list--desc-cont-top--icon tip__ssl-item--{{searchItem.cssClass}}">{{searchItem.SSL}}</div>
+                        </div>
+                        <div class="tip__tasx-tool-card-list--desc-cont-bottom">
+                            <p class="tip__tasx-tool-card-list--desc-cont-bottom--para" ng-bind-html="$sce.trustAsHtml(searchItem.Intro)">
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="tip__tasx-subtool-wrapper" ng-controller="indSubToolCtrl">
+    <div class="tip__top-section-heading-cont">
+        <h1 class="tip__top-section-heading-cont--header">{{currentSubTool.Title}}</h1>
+        <div class="tip__top-section-ssl-cont tip__ssl-item--{{sslObj.cssClass}}">
+            <a href="siteUrlSitePages/Index-Test.aspx/sat-tools/{{sslObj.SSL}}" class="tip__top-section-ssl-cont--link">{{sslObj.SSL}}</a>
+        </div>
+    </div>
+    <div class="tip__tasx-intro-section">
+        <p class="tip__tasx-intro-section--para" ng-bind-html="$sce.trustAsHtml(subToolObj.Summary)"></p>
+    </div>
+    <div class="tip__tasx-subtool-main-section" >
+        <div class="tip__tasx-subtool-main--list-cont" ng-bind-html="$sce.trustAsHtml(currentSubTool.Message)">
+        </div>
+        <div class="tip__tasx-subtool-main--access-cont">
+            <a href="{{currentSubTool.ToolAccess}}" target="_blank" class="tip__tasx-subtool-main--access-link" ng-if="currentSubTool.ToolAccess != null">
+                <div class="tip__tasx-subtool-main--access-img-cont">
+                  <p class="tip__tasx-subtool-main--access-para">Access<br>the tool</p>
+                </div>                
+            </a>
+        </div>
+        <div class="tip__tasx-subtool-main--champion-cont">
+            <ul class="  tip__tasx-subtool-main--champion-list">
+                <li class="--item tip__tasx-subtool-main--champion-list--item" ng-if="championArr.length == 0">
+                    <div class="tip__tasx-subtool-main--champion-img-cont">
+                        <img src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Rectangle 114.png?csf=1&e=8ayZnu" class="tip__tasx-subtool-main--champion-img" alt="">
+                    </div>
+                    <div class="tip__tasx-subtool-main--champion-desc-cont">
+                        <ul class="tip__tasx-subtool-main--champion-desc-list">
+                            <li class="tip__tasx-subtool-main--champion-desc-list--item">Super User</li>
+                            <li class="tip__tasx-subtool-main--champion-desc-list--item">N/A</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="--item tip__tasx-subtool-main--champion-list--item" ng-repeat="champion in championArr">
+                    <div class="tip__tasx-subtool-main--champion-img-cont">
+                        <img src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Rectangle 114.png?csf=1&e=8ayZnu" class="tip__tasx-subtool-main--champion-img" alt="" ng-if="currentSubTool.ChampionsId ==null">
+                        <img ng-if="currentSubTool.ChampionsId != null" src="siteUrl_layouts/15/userphoto.aspx?UserName={{champion.Email}}" alt="" class="tip__tasx-subtool-main--champion-img ">
+                    </div>
+                    <div class="tip__tasx-subtool-main--champion-desc-cont">
+                        <ul class="tip__tasx-subtool-main--champion-desc-list">
+                            <li class="tip__tasx-subtool-main--champion-desc-list--item">Super User</li>
+                            <li class="tip__tasx-subtool-main--champion-desc-list--item" ng-if="currentSubTool.ChampionsId == null">N/A</li>
+                            <li class="tip__tasx-subtool-main--champion-desc-list--item">{{champion.Title}}</li>
+                            <li class="tip__tasx-subtool-main--champion-desc-list--item"><a href="mailto:{{champion.Email}}?Subject={{currentSubTool.Title}}" target="_top">{{champion.Email}}</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="tip__tasx-team-contact-section">
+        <ul class="tip__tasx-team-contact-list">
+            <li class="tip__tasx-team-contact-list--item-video" ng-if="currentSubTool.Videos != null && video != ''" ng-repeat="video in videoArr">
+                <a href="{{video}}" class="tip__tasx-team-contact-list--link" target="_blank">
+                    <div class="tip__tasx-team-contact-list-img-video"></div>
+                    <p class="tip__tasx-team-contact-list--para">Video {{$index+1}}</p>
+                </a>
+            </li>
+            <li class="tip__tasx-team-contact-list--item-use-case" ng-if="currentSubTool.UseCase != null && useCase != ''" ng-repeat="useCase in useCaseArr">
+                <a href="{{useCase}}" target="_blank" class="tip__tasx-team-contact-list--link tip__tasx-team-contact-list--link">
+                    <div class="tip__tasx-team-contact-list-img tip__tasx-team-contact-list-img-use-case"></div>
+                    <p class="tip__tasx-team-contact-list--para">Use Case {{$index+1}}</p>
+                </a>
+            </li>
+            <li class="tip__tasx-team-contact-list--item-quick-ref" ng-if="currentSubTool.QuikcRefs != null && quickRef != ''" ng-repeat="quickRef in quickRefsArr">
+                <a href="{{quickRef}}" target="_blank" class="tip__tasx-team-contact-list--link">
+                    <div class="tip__tasx-team-contact-list-img-quick-ref"></div>
+                    <p class="tip__tasx-team-contact-list--para">Quick Reference Guide {{$index+1}}</p>
+                </a>
+            </li>
+            <li class="tip__tasx-team-contact-list--item-faq" ng-if="currentSubTool.Faqs != null">
+                <a href="currentSubTool.Faqs" class="tip__tasx-team-contact-list--link" target="_blank">
+                    <div class="tip__tasx-team-contact-list-img-faq"></div>
+                    <p class="tip__tasx-team-contact-list--para">Frequently Asked Questions</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

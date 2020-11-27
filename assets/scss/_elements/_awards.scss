@@ -1,0 +1,114 @@
+.tip__tasx-awards-wrapper{
+    margin-top: 3%;
+    display: flex; 
+    flex-wrap: wrap;
+    @include mq($from: desktop){
+        flex-direction: row;
+    }
+
+    @include mq($from: desktop){
+        background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url('siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Image 14.png?csf=1&e=RIEduG');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    
+    .tip__lead-para{
+        display: flex;
+        background-color: $eyYellow;
+        padding: 5%;
+        margin-bottom: 3%;
+
+        @include mq($from: desktop){
+            background-color: transparent;
+            padding:0;
+            margin-bottom: 0;
+            padding-right: 3%;
+            padding-bottom: 3%;
+        }
+
+        span{
+            @include fontSize(24px);
+        }
+    }
+
+    .tip__home-intro-section--main-para{
+        margin-left: 7%;
+    }
+
+    .tip__tasx-awards-categories{
+        &-cont{
+            margin-left:7%;
+        }
+
+        &-header{
+            font-family: EYInterstate-Bold, sans-serif;
+            @include fontSize(16px);
+            font-weight: 600;
+        }
+    }
+    
+    .tip__tasx-awards-accordion-section{
+        margin: 2% 0;
+        padding: 1% 4% 2%;
+        order: 3;
+
+        .tip__tasx-awards-accordion{
+
+            @include mq($from: desktop){
+                width: 55%;
+                margin-left: 3%;
+            }
+            
+
+            &--card{
+                border: none;
+            }
+
+            &--link{
+                padding:0;
+                text-align: left;
+            }
+
+            &--card-header{
+                background-color: $eyOffBlack;
+                color: $white;
+            }
+
+            &--heading{
+                font-family: EYInterstate-Bold, sans-serif;
+                @include fontSize(16px);
+                margin-bottom:0;
+            }
+        }
+    }
+
+    .tip__tasx-team-contact-section{
+        flex-basis: 100%;
+        order: 4;
+    }
+
+    .tip__tasx-modal{
+        
+        &-dialog{
+            margin-top:18%;
+        }
+        
+        &-header{
+            border: none;
+            padding: 3% 3% 0 3%;
+        }
+
+        &-close-btn{
+            font-family: EYInterstate-light, sans-serif;
+            @include fontSize(32px);
+        }
+
+        &-body{
+            padding: 0 8% 8%;
+        }
+
+        
+    }
+}
+

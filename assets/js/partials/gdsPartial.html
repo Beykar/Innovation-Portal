@@ -1,0 +1,87 @@
+<div class="tip__tasx-gds-wrapper">
+    <div class="tip__tasx-intro-section" ng-controller="topSectionCtrl">
+        <p class="tip__tasx-intro-section--para" ng-bind-html="$sce.trustAsHtml(currentPage.Text)"></p>
+    </div>
+    <div class="tip__tasx-gds-main-section">
+        <div class="tip__tasx-gds-main-desc-cont">
+            <p class="tip__tasx-gds-main-desc--para">
+                Why we're better together:
+                <ul class="tip__tasx-gds-main-desc--list">
+                    <li class="tip__tasx-gds-main-desc--list-item">We help engagement teams address pricing pressure and talent shortage challenges</li>
+                    <li class="tip__tasx-gds-main-desc--list-item">Our SAT professionals have leading-edge skill and capability from supporting deals and transactions across the world</li>
+                    <li class="tip__tasx-gds-main-desc--list-item">We operate within different time zones, and with shorter client deliverable timelines</li>
+                    <li class="tip__tasx-gds-main-desc--list-item">We have a proven track record on large engagements</li>
+                    <li class="tip__tasx-gds-main-desc--list-item">We deliver seamless, high quality service</li>
+                </ul>
+                <p class="tip__tasx-gds-main-desc--para">For more information on how GDS can help you, visit the new Global Delivery Services site.</p>
+                <ul class="tip__tasx-gds-main-desc--list">
+                    <li class="tip__tasx-gds-main-desc--list-item"><a href="https://sites.ey.com/sites/GDS_UserSite_CS/SitePages/Data%20and%20analytics.aspx" target="_blank" class="tip__tasx-gds-main-desc--list-link">GDS Site</a></li>
+                    <li class="tip__tasx-gds-main-desc--list-item"><a href="mailto:gdshelp@ey.com" target="_blank" class="tip__tasx-gds-main-desc--list-link">Contact GDS</a></li>
+                    <li class="tip__tasx-gds-main-desc--list-item"><a href="https://sites.ey.com/sites/ukitasinnovation/Shared%20Documents/Partnering%20with%20GDS%20page/GDS%20secondment%20travel%20guidance%20from%20UK%20to%20GDS.pdf" target="_blank" class="tip__tasx-gds-main-desc--list-link">Information for UK&I colleagues travelling to GDS on secondment</a></li>
+                    <li class="tip__tasx-gds-main-desc--list-item"><a href="https://sites.ey.com/sites/ukitasinnovation/Shared%20Documents/Partnering%20with%20GDS%20page/GDS%20secondment%20travel%20guidance%20from%20GDS%20to%20UK.pdf" target="_blank" class="tip__tasx-gds-main-desc--list-link">Information for GDS colleagues travelling to UK&I on secondment</a></li>
+                </ul>
+            </p>
+            <div class="tip__tasx-gds-contacts-cont" ng-controller="gdsCtrl">
+                <h3 class="tip__tasx-gds-contacts--heading">Key Contacts</h3>
+                <ul class="tip__tasx-gds-contacts-list">
+                    <li class="tip__tasx-gds-contacts-list--item" ng-repeat="gdsContact in gdsContactsArr">
+                        <div class="tip__tasx-gds-contacts-img-cont">
+                            <img src="siteUrl_layouts/15/userphoto.aspx?UserName={{gdsContact.GDSContactEmail}}" alt="" class="tip__tasx-gds-contacts-img">
+                        </div>
+                        <div class="tip__tasx-gds-contacts-desc-cont">
+                            <ul class="tip__tasx-gds-contacts-desc-list">
+                                <li class="tip__tasx-gds-contacts-desc-list--item" ng-if="gdsContact.ContactType == 'Sponsoring Partner'">{{gdsContact.ContactType}}</li>
+                                <li class="tip__tasx-gds-contacts-desc-list--item" ng-if="gdsContact.SSL != null">{{gdsContact.SSL}}</li>
+                                <li class="tip__tasx-gds-contacts-desc-list--item">{{gdsContact.Name}}</li>
+                                <li class="tip__tasx-gds-contacts-desc-list--item">{{gdsContact.Position}}</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- <li class="tip__tasx-gds-contacts-list--item">
+                        <div class="tip__tasx-gds-contacts-img-cont">
+                            <img src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Rectangle 114.png?csf=1&e=8ayZnu" alt="" class="tip__tasx-gds-contacts-img">
+                        </div>
+                        <div class="tip__tasx-gds-contacts-desc-cont">
+                            <ul class="tip__tasx-gds-contacts-desc-list">
+                                <li class="tip__tasx-gds-contacts-desc-list--item">Sponsoring
+                                    partner</li>
+                                <li class="tip__tasx-gds-contacts-desc-list--item">Name</li>
+                                <li class="tip__tasx-gds-contacts-desc-list--item">Title</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="tip__tasx-gds-contacts-list--item">
+                        <div class="tip__tasx-gds-contacts-img-cont">
+                            <img src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Rectangle 114.png?csf=1&e=8ayZnu" alt="" class="tip__tasx-gds-contacts-img">
+                        </div>
+                        <div class="tip__tasx-gds-contacts-desc-cont">
+                            <ul class="tip__tasx-gds-contacts-desc-list">
+                                <li class="tip__tasx-gds-contacts-desc-list--item">Corporate Finance</li>
+                                <li class="tip__tasx-gds-contacts-desc-list--item">Name</li>
+                                <li class="tip__tasx-gds-contacts-desc-list--item">Title</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="tip__tasx-gds-contacts-list--item">
+                        <div class="tip__tasx-gds-contacts-img-cont">
+                            <img src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/Rectangle 114.png?csf=1&e=8ayZnu" alt="" class="tip__tasx-gds-contacts-img">
+                        </div>
+                        <div class="tip__tasx-gds-contacts-desc-cont">
+                            <ul class="tip__tasx-gds-contacts-desc-list">
+                                <li class="tip__tasx-gds-contacts-desc-list--item">EYP</li>
+                                <li class="tip__tasx-gds-contacts-desc-list--item">Name</li>
+                                <li class="tip__tasx-gds-contacts-desc-list--item">Title</li>
+                            </ul>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="tip__tasx-gds-main-awards-cont">
+            <div class="tip__tasx-gds-main-awards-img-cont">
+                <img src="siteUrlSiteAssets/uki-tas-innovation-test/assets/img/GDS-Analytics.jpg?csf=1&e=8ayZnu" alt="" class="tip__tasx-gds-main-awards-img">            
+                <!-- <p class="tip__tasx-gds-main-awards-desc">Well done to the GDS UK Transaction Diligence team, who were awarded the highest performing team for Q1 FY19 for GDS ATS with 60% y-o-y growth and 3% increase in integration – the highest in EMEIA.</p> -->
+            </div>
+        </div>
+    </div>
+</div>
